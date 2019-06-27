@@ -46,6 +46,7 @@ nav h1 {
 }
 
 .card .card-image img {
+  object-fit: cover;
   height: 5rem;
 }
 

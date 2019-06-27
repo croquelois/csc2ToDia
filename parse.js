@@ -7,7 +7,7 @@ function splitTrim(sep, str){
 }
 
 function arraySplitTrim(sep, array){
-  return array.map(splitTrim.bind(null,sep));
+  return array.map(str => splitTrim(sep, str));
 }
 
 function cleanLine(line){
@@ -29,9 +29,9 @@ function parseConstants(array){
 }
 
 function parseTag(array){
-  array = arraySplitTrim(" ", array);
+  array = arraySplitTrim(/\s+/, array);
   array.forEach(function(line){
-    if(line.length == 1 || line.length > 2)
+    if(line.length <= 1)
       throw new Error("each line in the tag section should contain a field type and name separated by a space, it's not the case for '"+line+"'");
   });
   array = array.map(line => ({name: line[1].split("[")[0], type: line[0]}));
