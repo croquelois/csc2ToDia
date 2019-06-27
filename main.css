@@ -45,6 +45,13 @@ nav h1 {
   user-select: None;
 }
 
+nav {
+  background-image: url("hd.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .card .card-image img {
   object-fit: cover;
   height: 5rem;
